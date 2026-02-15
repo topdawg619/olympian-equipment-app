@@ -1,26 +1,34 @@
 const inventory = [
-  { id: 'H-201', name: 'SpeedFlex Helmet', category: 'Helmet', size: 'L', condition: 'Cleared', status: 'available', team: 'Varsity' },
+  { id: 'H-201', name: 'SpeedFlex Helmet', category: 'Helmet', size: 'L', condition: 'Cleared', status: 'out', team: 'Varsity' },
   { id: 'H-202', name: 'SpeedFlex Helmet', category: 'Helmet', size: 'M', condition: 'Needs pads', status: 'out', team: 'JV' },
   { id: 'S-101', name: 'Shoulder Pads', category: 'Pads', size: 'XL', condition: 'Cleared', status: 'out', team: 'Varsity' },
   { id: 'S-118', name: 'Shoulder Pads', category: 'Pads', size: 'L', condition: 'Cleared', status: 'available', team: 'JV' },
-  { id: 'J-41', name: 'Game Jersey', category: 'Jersey', size: 'M', condition: 'Needs stitching', status: 'available', team: 'JV' },
+  { id: 'J-41', name: 'Game Jersey', category: 'Jersey', size: 'M', condition: 'Needs stitching', status: 'out', team: 'JV' },
   { id: 'J-77', name: 'Game Jersey', category: 'Jersey', size: 'L', condition: 'Cleared', status: 'out', team: 'Varsity' },
   { id: 'A-08', name: 'Practice Pants', category: 'Pants', size: 'XL', condition: 'Cleared', status: 'available', team: 'Varsity' },
-  { id: 'A-15', name: 'Practice Pants', category: 'Pants', size: 'L', condition: 'Needs wash', status: 'available', team: 'JV' }
+  { id: 'A-15', name: 'Practice Pants', category: 'Pants', size: 'L', condition: 'Needs wash', status: 'out', team: 'JV' }
 ];
 
 const players = [
-  { id: 'p1', name: 'Isaiah Bennett', number: 5, team: 'Varsity', position: 'QB', status: 'Cleared' },
-  { id: 'p2', name: 'Caleb Flores', number: 12, team: 'Varsity', position: 'WR', status: 'Needs visor' },
-  { id: 'p3', name: 'Mateo Alvarez', number: 24, team: 'JV', position: 'RB', status: 'Cleared' },
-  { id: 'p4', name: 'Jalen McCoy', number: 52, team: 'JV', position: 'LB', status: 'Missing pads' }
+  { id: 'p1', name: 'Henry Sabin', number: 65, team: 'Varsity', position: 'OL', status: 'Cleared' },
+  { id: 'p2', name: 'Gio Ware', number: 34, team: 'Varsity', position: 'WR/KR', status: 'Cleared' },
+  { id: 'p3', name: 'Christopher Gutierrez', number: 82, team: 'Varsity', position: 'WR', status: 'Needs visor' },
+  { id: 'p4', name: 'Juan Madera', number: 78, team: 'Varsity', position: 'OL', status: 'Cleared' },
+  { id: 'p5', name: 'Kymarley McKoy', number: 91, team: 'Varsity', position: 'DT', status: 'Needs knee brace' },
+  { id: 'p6', name: 'Xavier Torres', number: 76, team: 'Varsity', position: 'NG', status: 'Cleared' },
+  { id: 'p7', name: 'Amarii Oehmke', number: 40, team: 'Varsity', position: 'LB', status: 'Missing thigh pads' },
+  { id: 'p8', name: 'Isaac Castro', number: 25, team: 'Varsity', position: 'WR', status: 'Cleared' },
+  { id: 'p9', name: 'Devin Fuller', number: 28, team: 'JV', position: 'RB/LB', status: 'Cleared' },
+  { id: 'p10', name: 'Dillan Durruthy', number: 29, team: 'JV', position: 'RB', status: 'Needs new helmet' },
+  { id: 'p11', name: 'Jayce Reimer', number: 37, team: 'JV', position: 'RB', status: 'Cleared' },
+  { id: 'p12', name: 'Enzo Aviles', number: 64, team: 'JV', position: 'OL', status: 'Missing girdle' }
 ];
 
 let checkouts = [
-  { id: 'c1', playerId: 'p1', itemId: 'H-201', issued: '2026-02-10', due: '2026-02-20', status: 'On time', notes: '' },
-  { id: 'c2', playerId: 'p2', itemId: 'J-77', issued: '2026-02-05', due: '2026-02-12', status: 'Overdue', notes: 'Needs wash' },
-  { id: 'c3', playerId: 'p3', itemId: 'S-118', issued: '2026-02-11', due: '2026-02-18', status: 'On time', notes: '' },
-  { id: 'c4', playerId: 'p4', itemId: 'H-202', issued: '2026-02-01', due: '2026-02-08', status: 'Flagged', notes: 'Needs new jaw pads' }
+  { id: 'c1', playerId: 'p3', itemId: 'H-201', issued: '2026-02-10', due: '2026-02-20', status: 'On time', notes: '' },
+  { id: 'c2', playerId: 'p7', itemId: 'S-101', issued: '2026-02-05', due: '2026-02-12', status: 'Flagged', notes: 'Shoulder pad strap ripped' },
+  { id: 'c3', playerId: 'p10', itemId: 'J-41', issued: '2026-02-03', due: '2026-02-10', status: 'Overdue', notes: 'Requesting smaller size' },
+  { id: 'c4', playerId: 'p9', itemId: 'A-15', issued: '2026-02-11', due: '2026-02-18', status: 'On time', notes: '' }
 ];
 
 const teamSelect = document.getElementById('teamSelect');

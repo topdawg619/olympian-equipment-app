@@ -27,3 +27,7 @@ python3 -m http.server 8080
 - Hook up Supabase/Firebase for real logins + persistence.
 - Add QR codes to items so coaches/players can check gear in/out from phones.
 - Generate CSV or PDF audit reports for end-of-season reconciliation.
+
+## Demo data
+- Players populated with real Olympian names (Henry Sabin, Gio Ware, Dillan Durruthy, etc.) across JV and Varsity.
+- Inventory + checkout rows simulate helmets, pads, jerseys, and practice pants with live statuses.
