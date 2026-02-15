@@ -181,7 +181,7 @@ body {
   gap: 16px;
   padding: 24px;
 }
-.roster-card {
+    .roster-card {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 16px;
@@ -255,3 +255,6 @@ button.primary {
     min-width: auto;
   }
 }
+
+.roster-card.clickable{cursor:pointer;transition:transform .2s,background .2s;}
+.roster-card.clickable:hover{transform:translateY(-2px);background:rgba(0,0,0,0.2);}

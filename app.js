@@ -215,13 +215,19 @@ function renderRoster() {
     .map((player) => {
       const chipClass = player.status.includes('Cleared') ? 'ok' : player.status.includes('Missing') ? 'danger' : 'alert';
       return `
-        <article class="roster-card">
+        <article class="roster-card clickable" data-player="${player.id}">
           <h4>#${player.number} ${player.name}</h4>
           <small>${player.team} · ${player.position}</small>
           <div class="status-chip ${chipClass}">${player.status}</div>
         </article>`;
     })
     .join('');
+  rosterEl.querySelectorAll('.roster-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const playerId = card.getAttribute('data-player');
+      showAssignmentsForPlayer(playerId);
+    });
+  });
 }
 
 function handleCheckoutAction(evt) {
@@ -240,6 +246,16 @@ function handleCheckoutAction(evt) {
     return co;
   }).filter(Boolean);
   renderAll();
+}
+
+function showAssignmentsForPlayer(playerId) {
+  const player = players.find((p) => p.id === playerId);
+  if (!player) return;
+  populateCheckoutForm();
+  checkoutPlayer.value = playerId;
+  checkoutNotes.value = '';
+  checkoutDue.value = new Date().toISOString().slice(0, 10);
+  dialog.showModal();
 }
 
 function populateCheckoutForm() {
