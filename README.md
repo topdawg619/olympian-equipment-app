@@ -29,5 +29,5 @@ python3 -m http.server 8080
 - Generate CSV or PDF audit reports for end-of-season reconciliation.
 
 ## Demo data
-- Players populated with real Olympian names (Henry Sabin, Gio Ware, Dillan Durruthy, etc.) across JV and Varsity.
+- Players populated with the 2025-26 Olympian Varsity roster (Jayden Fuentes, Juan Neo Ruiz, Gio Ware, Dillan Durruthy, etc.).
 - Inventory + checkout rows simulate helmets, pads, jerseys, and practice pants with live statuses.
