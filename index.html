@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olympian Equipment Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Olympian Football</p>
+      <h1>Equipment Command Center</h1>
+      <p class="lede">Live view of every helmet, pad, and jersey across JV and Varsity. Built for coaches who need accountability in under a minute.</p>
+    </div>
+    <div class="switcher">
+      <label for="teamSelect">Team focus</label>
+      <select id="teamSelect">
+        <option value="all">All teams</option>
+        <option value="JV">Junior Varsity</option>
+        <option value="Varsity">Varsity</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section class="summary" id="summary"></section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Inventory</h2>
+          <p>Live counts by size and condition.</p>
+        </div>
+        <div class="inventory-actions">
+          <input type="search" id="inventorySearch" placeholder="Search helmets, pads, etc." />
+        </div>
+      </div>
+      <div class="inventory-grid" id="inventoryGrid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Checkouts & Due Dates</h2>
+          <p>Spot overdue gear before practice starts.</p>
+        </div>
+        <button id="newCheckoutBtn" class="ghost-btn">Assign gear</button>
+      </div>
+      <table class="table" id="checkoutsTable">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Item</th>
+            <th>Issued</th>
+            <th>Due</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Roster Health</h2>
+          <p>Track who is cleared, flagged, or missing gear.</p>
+        </div>
+      </div>
+      <div class="roster" id="roster"></div>
+    </section>
+  </main>
+
+  <dialog id="checkoutDialog">
+    <form id="checkoutForm">
+      <h3>Assign gear</h3>
+      <label>Player
+        <select id="checkoutPlayer"></select>
+      </label>
+      <label>Item
+        <select id="checkoutItem"></select>
+      </label>
+      <label>Due date
+        <input type="date" id="checkoutDue" required />
+      </label>
+      <label>Notes
+        <textarea id="checkoutNotes" rows="3" placeholder="Optional condition notes"></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button type="button" id="cancelCheckout">Cancel</button>
+        <button type="submit" class="primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
